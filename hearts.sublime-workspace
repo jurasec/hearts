@@ -1,0 +1,459 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"sp",
+				"sps_jar"
+			],
+			[
+				"pu",
+				"pullAndUpdate"
+			],
+			[
+				"send",
+				"sendSimpleMail"
+			],
+			[
+				"creat",
+				"create_empty_game"
+			],
+			[
+				"id",
+				"idPlayer"
+			],
+			[
+				"q",
+				"query"
+			],
+			[
+				"pla",
+				"players_games"
+			],
+			[
+				"return",
+				"returning"
+			],
+			[
+				"pl",
+				"player"
+			],
+			[
+				"players_",
+				"players_games"
+			],
+			[
+				"card",
+				"cards_count"
+			],
+			[
+				"cards",
+				"cards_count"
+			],
+			[
+				"indice",
+				"INDICES"
+			],
+			[
+				"IPAD_CAT",
+				"IPAD_CAT_ROLES_312"
+			],
+			[
+				"v",
+				"VARCHAR2"
+			],
+			[
+				"NU",
+				"NUMBER"
+			],
+			[
+				"IPAD",
+				"IPAD_INFOTECA"
+			],
+			[
+				"idu",
+				"IDUSUARIO_"
+			],
+			[
+				"nu",
+				"NUMBER"
+			],
+			[
+				"tal",
+				"TABLE"
+			],
+			[
+				"id_bo",
+				"id_bot2"
+			],
+			[
+				"idbo",
+				"id_bot1"
+			],
+			[
+				"sp_n",
+				"sp_insert_game_user"
+			],
+			[
+				"puntos",
+				"puntos_obtenidos"
+			],
+			[
+				"ids",
+				"idsesion"
+			],
+			[
+				"idses",
+				"idsesion_juego"
+			],
+			[
+				"u",
+				"upper"
+			],
+			[
+				"no",
+				"nombre_juego"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"SET",
+				"Set Syntax: JSON"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 118.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/hearts/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/hearts/css/estilos.css",
+		"/Users/jcrodriguez/Documents/JuraseC/CursoMejorandoLaWeb/index.html",
+		"/Users/jcrodriguez/Documents/JuraseC/CursoMejorandoLaWeb/estilos.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/site/index.html",
+		"/Users/jcrodriguez/Documents/JuraseC/Libros/Informatica/Informaitca - Info.txt",
+		"/Users/jcrodriguez/Documents/Aserta_Mobile_Param.txt",
+		"/Users/jcrodriguez/Repositorios/database/TABLAS_SEGUROS",
+		"/Users/jcrodriguez/Documents/PagosDebitoASERTA.27062013.txt",
+		"/Users/jcrodriguez/Documents/1027Domi.txt",
+		"/Users/jcrodriguez/Documents/Captura_Digitex_24-06-2013.txt",
+		"/Users/jcrodriguez/Documents/Seguros_Mobile_Param.txt",
+		"/Users/jcrodriguez/Documents/Captura_Digitex_05-05-2013_3.txt",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/WS_INFORMATICA/Workflow ftp_DomiInsurgentes_1/templatEmail.txt",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/WS_INFORMATICA/Aserta_Mobile_Param.txt",
+		"/Users/jcrodriguez/Documents/JuraseC/VBCompartida/wsdl/resultadoCobroDCEmail.xml",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/CAF - Revisar/ReportsSiebelOracle/src/CAFFunctions/CAF.java",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/CAF - Revisar/ReportsSiebelOracle/WebAppRunner.html",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/CAF - Revisar/ReportsSiebelOracle/src/aserta/textos/CLOBUtils.java",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/CAF - Revisar/ReportsSiebelOracle/public_html/CAF.jsp",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/CAF - Revisar/ReportsSiebelOracle/public_html/CAFFrames.jsp",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/CAF - Revisar/ReportsSiebelOracle/public_html/CAFClose.jsp",
+		"/Users/jcrodriguez/Documents/JuraseC/FIEL.SAT",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Base IPADPRO/reportes.BI.sql",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/WS_INFORMATICA/Workflow ftp_DomiInsurgentes_1/1027Domi.txt",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/WS_INFORMATICA/Workflow ftp_DomiInsurgentes_1/pdv102730051316101424.txt",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/WS_INFORMATICA/Workflow ftp_DomiInsurgentes_1/email.txt",
+		"/Users/jcrodriguez/Desktop/roboAutonomoSensorXBeeTest/roboAutonomoSensorXBeeTest.ino",
+		"/Users/jcrodriguez/Documents/JuraseC/Arduino IPN/allo/practicas/analog0_serial/analog0_serial.ino",
+		"/Users/jcrodriguez/Documents/JuraseC/Arduino IPN/allo/practicas/helloWorld/helloWorld.ino",
+		"/Users/jcrodriguez/Documents/JuraseC/Documentos Jc/arduino",
+		"/Users/jcrodriguez/Email.java",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Fin Comun/Geolocalizacion/maps/index.html",
+		"/Users/jcrodriguez/Documents/JuraseC/antes",
+		"/Users/jcrodriguez/Documents/JuraseC/modificado.txt",
+		"/Users/jcrodriguez/Repositorios/default/mAserta/src/main/webapp/WEB-INF/aserta-servlet.xml",
+		"/Users/jcrodriguez/Repositorios/default/mAserta/src/main/webapp/WEB-INF/web.xml",
+		"/Users/jcrodriguez/Downloads/pdv10260306201304011530.TXT",
+		"/Volumes/todos_iPad/Documentación_General/Seguros/Middleware/Definicion/Verifone/VFAOrdersExport.csv",
+		"/Volumes/todos_iPad/Documentación_General/Seguros/Sistemas de control/Analisis/entregables de BLM/Insurance_20130110.txt",
+		"/Volumes/todos_iPad/Documentación_General/Seguros/Sistemas de control/Analisis/entregables de BLM/DJUFC20130110.dat",
+		"/Users/jcrodriguez/Downloads/SEP_20110302102239_20130327102249.DAT",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Docs/Cambios en BD",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/encargados.ausencia",
+		"/Users/jcrodriguez/Repositorios/database/ctrl_cambios.txt",
+		"/Users/jcrodriguez/Repositorios/database/pkg_ipad_312.sql",
+		"/Users/jcrodriguez/Repositorios/database/inserts_tablas_actuales.sql",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/PROD.Properties.v312/PL001.properties",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/MA312.properties",
+		"/Users/jcrodriguez/Desktop/log Renovaciones",
+		"/Users/jcrodriguez/Repositorios/database/tablas_312.sql",
+		"/Users/jcrodriguez/Desktop/doc.xml",
+		"/Users/jcrodriguez/Documents/JuraseC/Documentos Jc/analisis.bi.no.datos",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/User/Side Bar.sublime-settings",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Users/jcrodriguez/Downloads/pdv102703071302010900.txt",
+		"/Users/jcrodriguez/usuarios_.txt",
+		"/Users/jcrodriguez/android-sdk-macosx/tools/source.properties",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Reportes - JSP/siebr002_primasXcobrar.jsp",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Reportes - JSP/siebr005_responsa.jsp",
+		"/Users/jcrodriguez/Desktop/index.html",
+		"/Users/jcrodriguez/Downloads/1026Domi.01.11.13.txt",
+		"/Users/jcrodriguez/Documents/JuraseC/Documentos Jc/Project Euler/e1.py",
+		"/Users/jcrodriguez/Downloads/SE0030120121129.TXT",
+		"/Users/jcrodriguez/Downloads/mitcte1026@172.20.4.54sftp",
+		"/usr/local/Cellar/postgis/2.0.1/share/postgis/postgis.sql",
+		"/Users/jcrodriguez/Documents/JuraseC/Fin Comun/Geolocalizacion/maps/index.html",
+		"/Users/jcrodriguez/Documents/JuraseC/Fin Comun/Geolocalizacion/maps/Notas",
+		"/Users/jcrodriguez/Repositorios/mAserta/src/main/webapp/WEB-INF/weblogic.xml",
+		"/Users/jcrodriguez/Repositorios/mAserta/pom.xml",
+		"/Users/jcrodriguez/Repositorios/mAserta/src/main/webapp/WEB-INF/aserta-servlet.xml",
+		"/Users/jcrodriguez/Repositorios/mAserta/src/main/webapp/WEB-INF/web.xml",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Reestructuración/RSA Documentos/RSA API/sdk/samples/runtime/authn/build.xml",
+		"/Users/jcrodriguez/Documents/JuraseC/Documentos Jc/JMeter.articulo",
+		"/Users/jcrodriguez/Documents/JuraseC/Curso.iOS/RPNCalculator/RPNCalculator/RPNCalculatorBrain.m",
+		"/Users/jcrodriguez/Repositorios/database/pkg_ipad_301.sql",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Reestructuración/base de datos/PKG_IPAD_310.PROD.sql",
+		"/Users/jcrodriguez/Documents/JuraseC/Games/hearts/sp.prod.sql",
+		"/Users/jcrodriguez/Documents/JuraseC/Games/hearts/sp.local.sql",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Users/jcrodriguez/Library/Application Support/Sublime Text 2/Packages/User/HTML.sublime-settings",
+		"/Users/jcrodriguez/Documents/JuraseC/server/server.js",
+		"/Users/jcrodriguez/Documents/JuraseC/Aserta/Reestructuración/base de datos/LLENA_TABLAS_310.sql",
+		"/Users/jcrodriguez/Downloads/json.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Dir_ga",
+			".\n",
+			"Junta",
+			".\n",
+			"ConsultaContactosAgente3_0",
+			"$PMFailureEmailUser",
+			"?",
+			"Descripci?n",
+			"autorizaci?n",
+			"operaci?n",
+			"c?digo",
+			"transacci?n",
+			"N?mero",
+			"resultadoCobroDC",
+			"resultado",
+			"ERROR ConsultaSucursales:80 - Error:: consultaSucursales Aserta [ConsultaSucursalesWSPort] Parametros: inSucursalNombre=nullinSucursalTodas=Si - java.lang.NullPointerException",
+			"firmantes",
+			"FileDataSource",
+			"DataHandler",
+			"logger.debug",
+			"logger.info",
+			"MARIA DE LOS ANGELES JOSEFA",
+			"TOMAS FLORES ESTRADA",
+			"RICARDO AVILES MENDOZA",
+			"MONICA ROMERO CASTILLO",
+			"MONICA PLIEGO SOLANO",
+			"MARTIN MENDOZA GUZMAN",
+			"MARIA HARRISON LAFUENTE",
+			"MARIA DEL PILAR GUSI DELMOTTE",
+			"MARIA DE LOS ANGELES JOSEFA ZAVALA BECERRA",
+			"LUIS IGLESIAS CAMBRONERO",
+			"MAYORQUIN MORALES",
+			"LINO DAVID MAYORQUIN MORALES",
+			"JUANA AYALA MATA",
+			"JERONIMO TRUJILLO GUZMAN",
+			"ISABEL CONSTANTINA SILVA MENDEZ",
+			"FILIBERTO MEMIJE SALGADO",
+			"FERNANDO MARIO ROSAS BERNAL",
+			"ESTANISLAO",
+			"DANIELA BALANDRANO",
+			"ADRIANA RIVERA SANCHEZ",
+			"CARLOS",
+			"CARLOS YA",
+			"idUsuario",
+			"consulta_comision_xtarifa_autorizacion",
+			"1-2OP4HT",
+			"1-2OP60T",
+			"1-2OP4GF",
+			"1-2ONLE1",
+			"out",
+			"IPAD_SECCIONES_312",
+			"IPAD_ETIQUETAS_CONFIG_312",
+			"FORMATOS",
+			"IPAD_ETIQUETAS_CONFIG_312",
+			"IPAD_MODULOS_312",
+			"IPAD_CAT_ROLES_312",
+			"IPAD_SECCIONES_GENERALES_312",
+			"IPAD_USUARIOS_312",
+			"TBSDATOS",
+			"IPAD_WS_SALIDA_312",
+			"IPAD_USUARIOS_312",
+			"IPAD_MODULOS_312",
+			"IPAD_MOD_SEC_NIVEL_WS_312",
+			"IPAD_GESTORES_CORRELACION_312",
+			"bd.PKG_IPAD_PAGOENLINEA=AFIANDWH.PKG_IPAD_PAGOENLINEA",
+			"IPAD_FORMATOS_312",
+			"IPAD_CAT_ROLES_312",
+			"IPAD_SECCIONES_GENERALES_312",
+			"acceso",
+			"IPAD_MODULOS_312",
+			"IPAD_CAT_ROLES_312",
+			"DATOS",
+			"IPAD_ACCESO_3",
+			"\\n+\\r",
+			"\\n",
+			"'",
+			"9.2.1",
+			"$libdir",
+			"idx",
+			"1-1S11KX",
+			"1-1S11GJ",
+			"comment"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Descripción",
+			"autorización",
+			"operación",
+			"código",
+			"transacción",
+			"Número",
+			"resultadoCobroDCEmail",
+			"System.out.println",
+			"",
+			"TBSDATOS",
+			",",
+			"\"",
+			"9.1",
+			"/usr/local/Cellar/postgresql/9.2.1/lib",
+			"id"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/jcrodriguez/Documents/JuraseC/Aserta/Fin Comun/Geolocalizacion/maps/Notas"
+			],
+			[
+				"doc",
+				"/Users/jcrodriguez/Desktop/doc.xml"
+			],
+			[
+				"pend",
+				"/Users/jcrodriguez/Documents/JuraseC/Documentos Jc/pendiente"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
