@@ -257,7 +257,7 @@ collie.Renderer.addLayer(layer);
 collie.Renderer.load(document.getElementById("container"));
 collie.Renderer.start();
 drawDeck();
-drawDecksVsPlayers();
+// drawDecksVsPlayers();
 
 
 
