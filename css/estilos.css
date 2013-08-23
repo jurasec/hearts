@@ -1,44 +1,64 @@
 
- /* Default wide-screen styles */
+/* Default wide-screen styles */
+@media screen and (max-width: 1500px) {
+	html, body {
+		height: 99%;
+	}
 
-@media all and (min-width: 769px) {
-    /* styles for narrow desktop browsers and iPad landscape */
-    body{
-		border: 2px #3399FF solid; /* FFFF00 amarillo */
+	body
+	{
+		background: #EFEFEF;
+		color: #4C4C4C;
+		font-family: "PT Sans", Arial;
+		font-size: 16px;
+		overflow: hidden;
+	}
+
+	#mainWrap{
+		border: 6px solid pink; /* FFFF00 amarillo */
+		/*display: block;*/
+		height: 99%;
+		/*margin-left: px;*/
+		width: 99%;
+	}
+
+	.card{
+		border: 2px solid black;
+		height: 3em;
+		width: 2em;		
 	}
 }
 
-@media all and (min-width: 1024px) {
-    /* styles for narrow desktop browsers and iPad landscape */
-    body{
-		border: 2px red solid; /* FFFF00 amarillo */
+@media all and (max-device-height: 480px) {
+	body
+	{
+		background: #EFEFEF;
+		color: #4C4C4C;
+		font-family: "PT Sans", Arial;
+		font-size: 16px;
+		margin: 0;
+	}
+	#mainWrap{
+		border: 6px solid red; /* FFFF00 amarillo */
+		/*display: block;*/
+		height: 97%;
+		/*margin-left: px;*/
+		width: 97%;
+	}
+
+	.card{
+		border: 2px solid black;
+		height: 3em;
+		width: 2em;		
 	}
 }
-
-@media all and (max-width: 768px) {
-    /* styles for narrower desktop browsers and iPad portrait */
-    body{
-		border: 2px yellow solid; /* FFFF00 amarillo */
-	}
-}
-
-@media all and (max-width: 480px) {
-    /* styles for iPhone/Android landscape (and really narrow browser windows) */
-    body{
-		border: 2px black solid; /* FFFF00 amarillo */
-	}
-}
-
-@media all and (max-width: 320px) {
-    /* styles for iPhone/Android portrait */
-    body{
-		border: 2px green solid; /* FFFF00 amarillo */
-	}
-}
-
-@media all and (max-width: 240px) {
-    /* styles for smaller devices */
-    body{
-		border: 2px cyan solid; /* FFFF00 amarillo */
+@media all and (max-device-height: 578px) {
+	/* styles for narrow desktop browsers and iPad landscape */
+	#mainWrap{
+		border: 6px solid blue; /* FFFF00 amarillo */
+		/*display: block;*/
+		height: 97%;
+		/*margin-left: px;*/
+		width: 97%;
 	}
 }
