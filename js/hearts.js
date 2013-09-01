@@ -15,7 +15,9 @@ var widthCard = realCardWidth * scale;
 // alto de la carta escalada
 var heightCard = realCardHeight * scale;
 // valor para ajustar algunos desplazamientos de las cartas
-var offset = 0;
+var offsetDiv = 1/2;
+var offset = (widthDevice - widthCard - (12*widthCard*offsetDiv))/2;
+console.log('widthDevice:'+widthDevice+' offset:'+offset);
 // valor temporal para restar el ancho de la barra de busqueda
 var spaceToolBar= 215;
 // valor del eje Y para saber donde debe dibujarse las cartas del jugador
@@ -135,7 +137,6 @@ var playerDeck = new Deck();
 // var htStartPosition = {};
 // var htSelectedDisplayObjectPosition = {};
 
-
 function drawDeck(){
     var cardPosition = 1;
     var leftSideValue = -1;
@@ -147,27 +148,21 @@ function drawDeck(){
     for(var i = 0; i < cardsPlayer.length; i++){
 
         cardValue = cardsPlayer[ i ];
+        cardPosition = i + 1;
         /**
          * se va comprando si existe una carta a la izquierda o la derecha, de existir se asocia, para tener estos
          * valores en cualquier momento.
          **/
-        if(cardPosition == 0){
-            leftSideValue = -1;
-            rightSideValue = cardsPlayer[ i + 1 ]
-        }
-        else if( cardPosition == 13){
-            leftSideValue = cardsPlayer[ i - 1 ];
-            rightSideValue = -1;
-        }
-        else{
-            leftSideValue = cardsPlayer[ i - 1 ];
-            rightSideValue = cardsPlayer[ i + 1 ]
-        }
+        leftSideValue = (cardPosition === 1?-1:cardsPlayer[ i - 1 ]);
+        rightSideValue= (cardPosition ===13?-1:cardsPlayer[ i + 1 ]);
+
+        console.log('valores cardP: '+cardPosition+' leftV: '+leftSideValue+' rightV: '+rightSideValue);
 
         // se crea el objeto que representa una carta según sea cardValue.
         var tmpCard = new collie.DisplayObject({
-            x: ( widthCard * ( cardPosition ) ) + offset,
+            x: offset + ( widthCard * offsetDiv * (cardPosition-1)),
             y: cardOffsetY,
+//            angle:getAngle(13,cardPosition),
             scaleX: scale,
             scaleY: scale,
             originX: 'left',
@@ -181,32 +176,32 @@ function drawDeck(){
             // velocityRotate: 50
         }).addTo( layer );
 
-        cardPosition++;
+ //       cardPosition++;
 
         // se configuran las animaciones y la respuesta al evento click/touch
         var currentY = tmpCard.get( 'y' );
         tmpCard.attach({
-            click: function ( oEvent ) {        
-                collie.Timer.queue().
-                    transition( oEvent.displayObject, 200, {                        
-                        to: [ oEvent.displayObject.get( 'y' ) - 170, ( widthDevice / 2 ) - ( ( widthCard ) / 2 ) ],  // sinusoidal
-                        effect: collie.Effect.easeOutBack, // sinusoidal easeIn, //collie.Effect.cubicBezier(0.16, 0.79, 0.92, 0.27),
-                        set: [ 'y', 'x' ]
+            click: function ( oEvent ) {
+                if(!oEvent.displayObject.get( 'dropped' )){
+                    collie.Timer.queue().
+                       transition( oEvent.displayObject, 200, {                        
+                            to: [ oEvent.displayObject.get( 'y' ) - 170, ( widthDevice / 2 ) - ( ( widthCard ) / 2 ) ],  // sinusoidal
+                            effect: collie.Effect.easeOutBack, // sinusoidal easeIn, //collie.Effect.cubicBezier(0.16, 0.79, 0.92, 0.27),
+                            set: [ 'y', 'x' ]
+                        });
+                    // se envian las cartas siempre al frente de todas.
+                    oEvent.displayObject.set({
+                            zIndex: 1
+                        }
+                    );
+                    // indicamos que la carta ha sido jugada.
+                    oEvent.displayObject.set({
+                        dropped: true
                     });
-                
-                // se envian las cartas siempre al frente de todas.
-                oEvent.displayObject.set({
-                        zIndex: 1
-                    }
-                );
-                // indicamos que la carta ha sido jugada.
-                oEvent.displayObject.set({
-                    dropped: true
-                });
-
-                // jsonDroppedCards["turno"+currentTurn]= oEvent.displayObject.get('backgroundImage');
-                currentTurn++;
-                reAlign(oEvent.displayObject);                        
+                    // jsonDroppedCards["turno"+currentTurn]= oEvent.displayObject.get('backgroundImage');
+                    currentTurn++;
+                    reAlign(oEvent.displayObject);
+                }
             }                        
         });
 
@@ -218,47 +213,23 @@ function drawDeck(){
 function reAlign( cardDropped ){
     var deck = playerDeck.getCards();
     var posXRef = cardDropped.get( 'x' );
-    // for(var i = 0; i < playerDeck.getCards().length; i++){
-        // console.log("carta ["+(i+1)+"]: "+ deck[i].get("backgroundImage"));
-    // }
+    var dirX = 1;
+
     console.log('leftSide: '+cardDropped.get( 'leftSide' )+', rightSide: '+cardDropped.get( 'rightSide' ));
-    if( cardDropped.get( 'leftSide' ) == -1 || cardDropped.get( 'rightSide' ) == -1) {
-        console.log('no se hace nada.');
-        return;
-    }
-    else{
-        console.log('dropped: ['+cardDropped.get('dropped')+'] se recorren las cartas de la izquierda a derecha, inicia con: '+( cardDropped.get('cPosition') - 1) );
-        // recorre las cartas que estan a la izquierda de la carta elegida
-        for( var i = ( cardDropped.get( 'cPosition' ) - 1 ) ; i >= 0 ; i--){
-            if( !deck[ i ].get( 'dropped' ) ){
-                console.log('moviendo carta en posicion: '+ i);
-                console.log('moviendo: '+deck[ i ].get( 'backgroundImage' ) );
-                collie.Timer.queue().
-                        transition( deck[ i ], 200, {
-                            to: deck[ i ].get( 'x' ) + ( widthCard / 2 ),
-                            effect: collie.Effect.easeOutBack, // sinusoidal easeIn, //collie.Effect.cubicBezier(0.16, 0.79, 0.92, 0.27),
-                            set: 'x'
-                        });
-            }
-        }
+    for(var i = 0; i < 13; i++){
+        if( !deck[ i ].get( 'dropped' )){
+            dirX = (cardDropped.get('cPosition') > i?1:-1);
 
-        console.log('se recorren las cartas de la derecha a la izquierda, inicia con: '+( cardDropped.get('cPosition') + 1 ));
-        // recorre las cartas que estan a la derecha de la carta elegida
-        for( var i = ( cardDropped.get( 'cPosition' ) + 1 ) ; i <=   12 ; i++){
-            if( !deck[ i ].get( 'dropped' ) ){
-                console.log('moviendo carta en posicion: '+ i);
-                // console.log('moviendo: '+deck[ i ].get('backgroundImage'));
-                collie.Timer.queue().
-                        transition( deck[ i ], 200, {
-                            to: deck[ i ].get( 'x' ) - ( widthCard / 2 ),
-                            effect: collie.Effect.easeOutBack, // sinusoidal easeIn, //collie.Effect.cubicBezier(0.16, 0.79, 0.92, 0.27),
-                            set: 'x'
-                        });
-            }
+            console.log('moviendo carta ' + deck[ i ].get( 'backgroundImage' ) + ', posicion ' + i + ' , direccion ' + dirX);
+
+            collie.Timer.queue().
+                transition( deck[ i ], 200, {
+                    to: deck[ i ].get( 'x' ) + ( (widthCard*offsetDiv*dirX) / 2 ),
+                        effect: collie.Effect.easeOutBack, // sinusoidal easeIn, //collie.Effect.cubicBezier(0.16, 0.79, 0.92, 0.27),
+                        set: 'x'
+                    });
         }
     }
-
-
 }
 
 // dibuja las cartas del openente
@@ -361,7 +332,7 @@ collie.Renderer.addLayer( layer );
 collie.Renderer.load( document.getElementById( 'container' ) );
 collie.Renderer.start();
 drawDeck();
-// drawDecksVsPlayers();
+//drawDecksVsPlayers();
 /* ----------------------------------------------------------------------------------------------------------------*/
 
 window.onresize = function( event ) {
