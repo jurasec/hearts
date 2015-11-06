@@ -23,7 +23,7 @@ var winston = require('winston'),
 var daily = new winston.transports.File({
   name: 'file',
   datePattern: '.yyyy-MM-dd', 
-  filename: './logs/log_file.log',
+  filename: __dirname + '/logs/log_file.log',
 });
 
 transports.push(daily);
