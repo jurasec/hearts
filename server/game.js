@@ -164,8 +164,12 @@ function TableGame(){
       this.turn++;
       return { isCardPlayable:true , cause: 'La carta es jugable.'};
     }
-    if( !this.heartsHaveBeenBroken && suitCardToPlay === 'H' && (this.cardsPlayed%4 == 0))
-      return { isCardPlayable:false , cause: 'Aún no se han jugado corazones.'};    
+    if( !this.heartsHaveBeenBroken && suitCardToPlay === 'H' && (this.cardsPlayed%4 == 0) ){
+      if( this.isFreeSuit( hand ) ) // Si tiene puros corazones y es el primer turno, no lo dejaba tirar
+        return { isCardPlayable:true , cause: 'La carta es jugable.'};    
+      else
+        return { isCardPlayable:false , cause: 'Aún no se han jugado corazones.'};    
+    }
     else if( this.isFreeSuit( hand ) ){
       this.turn++;
       console.log('|--------------------> This turn is free suit - card ', card, ' --- this.higherCardOnTurn ', this.higherCardOnTurn);
@@ -440,54 +444,83 @@ function Bot( player, game ){
 
 
 // var hand1;
-console.log( 'Creating game and shuffling deck' );
-var game = new TableGame();
+// console.log( 'Creating game and shuffling deck' );
+// var game = new TableGame();
 // console.log( game.getDeck() );
-console.log( 'deck length: ', game.getDeck().length );
+// console.log( 'deck length: ', game.getDeck().length );
 // console.log( 'ingresa un jugador1');
 // console.log( game.addPlayer( '1', 'player1' ) );
 // console.log( 'ingresa un jugador2');
 // console.log( game.addPlayer( '2', 'player2' ) );
 
 
-bot1 = new Bot( game.addPlayer( 1, 'player1' ), game );
-bot2 = new Bot( game.addPlayer( 2, 'player2' ), game );
-bot3 = new Bot( game.addPlayer( 3, 'player3' ), game );
-bot4 = new Bot( game.addPlayer( 4, 'player4' ), game );
+// bot1 = new Bot( game.addPlayer( 1, 'player1' ), game );
+// bot2 = new Bot( game.addPlayer( 2, 'player2' ), game );
+// bot3 = new Bot( game.addPlayer( 3, 'player3' ), game );
+// bot4 = new Bot( game.addPlayer( 4, 'player4' ), game );
 
-console.log('Players');
-console.log(game.getPlayers());
+// console.log('Players');
+// console.log(game.getPlayers());
 
-console.log(' ================== Hands ==================  ');
-console.log('player 1 [', bot1.getPlayerHand().toString(), ']' );
-console.log('player 2 [', bot2.getPlayerHand().toString(), ']' );
-console.log('player 3 [', bot3.getPlayerHand().toString(), ']' );
-console.log('player 4 [', bot4.getPlayerHand().toString(), ']' );
-
-
-logger.debug(' ================== Hands ==================  ');
-logger.debug('player 1 [', bot1.getPlayerHand().toString(), ']' );
-logger.debug('player 2 [', bot2.getPlayerHand().toString(), ']' );
-logger.debug('player 3 [', bot3.getPlayerHand().toString(), ']' );
-logger.debug('player 4 [', bot4.getPlayerHand().toString(), ']' );
+// console.log(' ================== Hands ==================  ');
+// console.log('player 1 [', bot1.getPlayerHand().toString(), ']' );
+// console.log('player 2 [', bot2.getPlayerHand().toString(), ']' );
+// console.log('player 3 [', bot3.getPlayerHand().toString(), ']' );
+// console.log('player 4 [', bot4.getPlayerHand().toString(), ']' );
 
 
-while(game.cardsPlayed<52){
-  bot1.playCard();
-  bot2.playCard();
-  bot3.playCard();
-  bot4.playCard();
+// logger.debug(' ================== Hands ==================  ');
+// logger.debug('player 1 [', bot1.getPlayerHand().toString(), ']' );
+// logger.debug('player 2 [', bot2.getPlayerHand().toString(), ']' );
+// logger.debug('player 3 [', bot3.getPlayerHand().toString(), ']' );
+// logger.debug('player 4 [', bot4.getPlayerHand().toString(), ']' );
+
+
+var nextHand = true;
+var game;
+
+while(  nextHand ){
+
+  game = new TableGame();
+  bot1 = new Bot( game.addPlayer( 1, 'player1' ), game );
+  bot2 = new Bot( game.addPlayer( 2, 'player2' ), game );
+  bot3 = new Bot( game.addPlayer( 3, 'player3' ), game );
+  bot4 = new Bot( game.addPlayer( 4, 'player4' ), game );
+
+  while(game.cardsPlayed<52){
+    bot1.playCard();
+    bot2.playCard();
+    bot3.playCard();
+    bot4.playCard();
+  }
+
+
+  for( var i in game.getPlayers() ){
+    // console.log( player );
+    console.log('Points Player ', game.getPlayers()[ i ].getID(), ' => ', game.getPlayers()[ i ].getPoints() );
+    // logger.debug('Points Player ', game.getPlayers()[ i ].getID(), ' => ', game.getPlayers()[ i ].getPoints() );
+
+    if( game.getPlayers()[ i ].getPoints() == 26 ) {
+      nextHand=false;
+    }
+  }
+
 }
 
 console.log('------- oooooooooooooo Juego terminado!!! oooooooooooooo -------');
 logger.debug('------- oooooooooooooo Juego terminado!!! oooooooooooooo -------');
 console.log('Resultado final');
 logger.debug('Resultado final');
-for( var i in game.getPlayers() ){
-  // console.log( player );
-  console.log('Points Player ', game.getPlayers()[ i ].getID(), ' => ', game.getPlayers()[ i ].getPoints() );
-  logger.debug('Points Player ', game.getPlayers()[ i ].getID(), ' => ', game.getPlayers()[ i ].getPoints() );
-}
+
+
+
+
+// for( var i in game.getPlayers() ){
+//   // console.log( player );
+//   console.log('Points Player ', game.getPlayers()[ i ].getID(), ' => ', game.getPlayers()[ i ].getPoints() );
+//   logger.debug('Points Player ', game.getPlayers()[ i ].getID(), ' => ', game.getPlayers()[ i ].getPoints() );  
+// }
+
 
 // console.log( 'ingresa un jugador3');
 // console.log( game.addPlayer( '3', 'player3' ) );
