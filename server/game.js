@@ -124,10 +124,13 @@ function TableGame(){
       this.players[this.playerWhoEats].addPoints( this.heartsThisRound );
       console.log('Se han sumando ', this.heartsThisRound, ' puntos al jugador ', this.playerWhoEats);
       this.heartsThisRound = 0;
-      var idPlayer = this.checkShootTheMoon();
-      if( idPlayer )
-        console.log(" SHOOOOOOOOOOOOOOOOOOOOTTTTTTIIIIIIIIIIINNNNNNNNNNNNGGGGGGGGGGGGGGG THE MOOOOOOONNNNNNN !!!!!!!!! => Player " , idPlayer);
-      else console.log("There isn't shoting the moon :-[");
+
+      if( this.cardsPlayed == 52 ){  //al final de la mano se verifica si alguien obtuvo los 26 puntos
+        var idPlayer = this.checkShootTheMoon();
+        if( idPlayer )
+          console.log(" SHOOOOOOOOOOOOOOOOOOOOTTTTTTIIIIIIIIIIINNNNNNNNNNNNGGGGGGGGGGGGGGG THE MOOOOOOONNNNNNN !!!!!!!!! => Player " , idPlayer);
+        else console.log("There isn't shoting the moon :-[");
+      }
       
 
       console.log('---------------------------------------------------------------------------------------------------------------------------------');
@@ -226,20 +229,32 @@ function TableGame(){
   } 
 
 
-  this.checkShootTheMoon = function( player ){
+  this.checkShootTheMoon = function( ){    
+
     for(var index in this.players){
+      console.log( 'Revisando puntos para shoot the moon -> player ', this.players[ index ].getID(), ' - puntos -> ', this.players[ index ].points );
+    }
+
+
+    for(var index in this.players){
+      // console.log( 'Revisando puntos para shoot the moon -> player ', this.players[ index ].getID(), ' - puntos -> ', this.players[ index ].points );
       if( this.players[ index ].points == 26){
         for(var index2 in this.players){
-          this.players[ index ].points = 0;
+          // this.players[ index ].points = 0;
           if( index == index2 ) {
+            console.log('se restan 26 puntos al jugador ', this.players[ index ].getID() );
             this.players[ index ].subtractPoints( 26 );
             continue;
           }
-          else this.players[ index2 ].addPoints( 26 );
+          else {
+            console.log('se suman 26 puntos al jugador ', this.players[ index2 ].getID() );
+            this.players[ index2 ].addPoints( 26 );
+          }
         }
-        return index;
-      }else return null;
+        return this.players[ index ].getID();        
+      }
     }
+    return null;
   }
 
   /**
