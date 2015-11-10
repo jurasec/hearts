@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/jurasec/hearts",
   "dependencies": {
+    "express.io": "^1.1.13",
+    "jade": "^1.11.0",
     "koa": "^1.0.0",
     "winston": "^2.1.0"
   }
