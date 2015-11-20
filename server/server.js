@@ -26,10 +26,25 @@ app.get('/',  function(req, res){
 
 
 app.io.on('connection', function (socket){
-  console.log(socket.id);
+  console.log(socket.id);  
 });
 
 app.io.route('game', {
+
+  players: function( req ){
+    var playersList = {};
+
+    for (var key in players) {
+      if (players.hasOwnProperty(key)) {
+        // console.log(key + " -> " + players[key].getNickName());
+        playersList[ key ] = { nickName:players[ key ].getNickName() };
+      }
+    }
+    // console.log( players );
+    console.log( playersList );
+    req.io.respond(playersList);
+  },
+
   join: function( req ){
     // console.log( tableGame );
     if( tableGame.getConnectedPlayers() < 4 ){
