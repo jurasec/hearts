@@ -5,9 +5,21 @@ $(document).ready(function(){
   var cards="";
   
   io.on('connect', function(){    
-    // io.on('message', function( data ){
-    //   console.log( data );
-    // });
+    io.emit('game:players', function( data ){  // se pide la lista de jugadores
+      console.log( data );
+
+      var jugadores = '';
+
+      for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+          // console.log(key + " -> " + data[key].nickName);
+          jugadores += '<div> ' + data[ key ].nickName + '</div>'
+        }
+      }
+
+      $('#jugadores').html( jugadores );
+
+    });
   }); 
 
   io.on('users', function( data ){
@@ -40,38 +52,41 @@ $(document).ready(function(){
 
       if( data.joined ){
         var cards = '';
-        for(var index in data.hand){
-          cards += '<div><input type=\'checkbox\' class=\'group1\'  value= ' +data.hand[ index ] + '>' + data.hand[ index ] + '</input></div>';
-        }        
+        // for(var index in data.hand){
+        //   cards += '<div><input type=\'checkbox\' class=\'group1\'  value= ' +data.hand[ index ] + '>' + data.hand[ index ] + '</input></div>';
+        // }        
 
-        cards += '<button id=\'playCard\'> Jugar carta seleccionada </button>';
+        // cards += '<button id=\'playCard\'> Jugar carta seleccionada </button>';
 
         $('#nickname').html('<h3> Nick: ' + nick + ' PlayerID: [ ' + data.playerID + ']</h3>');        
 
-        $('#cards').html( cards );
+        // $('#cards').html( cards );
 
-        $('input[type="checkbox"]').change( function() {
-          // console.log( 'selected box' );
-          // $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
-          $('input[type="checkbox"]').not(this).prop("checked", false);
-        });
+        // $('input[type="checkbox"]').change( function() {
+        //   // console.log( 'selected box' );
+        //   // $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
+        //   $('input[type="checkbox"]').not(this).prop("checked", false);
+        // });
 
-        $('#playCard').click( function(){
-          // var cardSelected =  $('input[type="checkbox"]').siblings(':checked').val() ;
-          var cardSelected = $('input[type="checkbox"]:checked').val();
-          console.log('Carta seleccionada: ', cardSelected);
+        // $('#playCard').click( function(){
+        //   // var cardSelected =  $('input[type="checkbox"]').siblings(':checked').val() ;
+        //   var cardSelected = $('input[type="checkbox"]:checked').val();
+        //   console.log('Carta seleccionada: ', cardSelected);
 
-          io.emit('game:playCard', { card: cardSelected}, function( data ){
-            $('#msgServer').html('Server: ' + data.msg);
-            if( data.isCardPlayable ){
+        //   io.emit('game:playCard', { card: cardSelected}, function( data ){
+        //     $('#msgServer').html('Server: ' + data.msg);
+        //     if( data.isCardPlayable ){
 
-              $('input[type="checkbox"]:checked').parent().fadeOut( "slow", function() {
-                $(this).remove();
-              });
-            }
+        //       $('input[type="checkbox"]:checked').parent().fadeOut( "slow", function() {
+        //         $(this).remove();
+        //       });
+        //     }
 
-          });
-        });
+        //   });
+        // });
+        
+
+        $('#jugadores').append( '<div> ' + nick + '</div>' );
 
       }else{
         $('#msgServer').text('Mesa llena :-[');
