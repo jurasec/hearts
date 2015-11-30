@@ -37,10 +37,10 @@ $(document).ready(function(){
     $('#status').html( '<h2>Estatus: ' + data.status + '</h2>');
   });
 
-  io.on('game:currentTurn', function( data ){
-    console.log('Es el turno del jugador -> ', data.turn);
-    $('#msgServer').html( 'Server: Es el turno del jugador -> ' + data.turn );
-  });
+  // io.on('game:currentTurn', function( data ){
+  //   console.log('Es el turno del jugador -> ', data.turn);
+  //   $('#msgServer').html( 'Server: Es el turno del jugador -> ' + data.turn );
+  // });
 
 
 
@@ -58,7 +58,9 @@ $(document).ready(function(){
 
         // cards += '<button id=\'playCard\'> Jugar carta seleccionada </button>';
 
-        $('#nickname').html('<h3> Nick: ' + nick + ' PlayerID: [ ' + data.playerID + ']</h3>');        
+        // $('#nickname').html('<h3> Nick: ' + nick + ' PlayerID: [ ' + data.playerID + ']</h3>');
+        // console.log('aaaaaaa');
+        $('canvas').css('display', 'inline');
 
         // $('#cards').html( cards );
 
