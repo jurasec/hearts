@@ -50,7 +50,7 @@ app.io.route('game', {
     if( tableGame.getConnectedPlayers() < 4 ){
       var player = tableGame.addPlayer( req.data.nick, req.socket.io );  
       console.log( 'Player [ ', player.getID(), ' - ', player.getNickName(), '] agregado, socket id -> ', req.socket.id );
-      req.io.respond({ 'joined' : true, playerID: player.getID(), hand: player.getHand() });
+      req.io.respond({ 'joined' : true, playerID: player.getID(), hand: player.getHand(), playerNumber: player.getNumber() });
       
       players[ req.socket.id ] = player ; // Agregamos el jugador al objeto Players, para poder acceder de manera rápida
       
@@ -72,13 +72,16 @@ app.io.route('game', {
     var player = players[ req.socket.id ];
     var card = req.data.card;
     console.log('Juagador intentando tirar una carta -> ', player);
-    console.log('Turno del jugador -> ' , tableGame.getPlayerToLead());
+    // console.log('Turno del jugador -> ' , tableGame.getPlayerToLead());
 
     if( tableGame.getPlayerToLead() == player.getID() ){
       var statusCardPlayed = tableGame.playCard( player.getHand().indexOf( card ) , card, player.getHand(), player );
       
-      if( statusCardPlayed.isCardPlayable ) // Se actuliza el turno
-        app.io.broadcast( 'game:currentTurn', { turn : tableGame.getPlayerToLead() } ); 
+      if( statusCardPlayed.isCardPlayable ) {// Se actuliza el turno y se envia la carta jugada
+        console.log('broadcasting card -> ', card, ' roundFinished -> ', tableGame.getRoundFinished(),' - playerWhoEats -> ', tableGame.getPlayerWhoEats());
+        app.io.broadcast( 'game:cardPlayed', { turn : tableGame.getPlayerToLead(), lastTurn: player.getNumber() , 
+          card: card, roundFinished: tableGame.getRoundFinished(), playerWhoEats: tableGame.getPlayerWhoEats() } ); 
+      }
       
       console.log( 'Estatus de la carta jugadoa: ', statusCardPlayed.cause );
         // req.io.respond( { msg: statusCardPlayed.cause } );
