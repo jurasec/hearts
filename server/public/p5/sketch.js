@@ -379,7 +379,7 @@ function buttonmMousePressedEvent(  ){
               console.log('currentSpriteCard -> ');
               console.log( currentSpriteCard );
               this.depth = depth++;
-              cardsSpritesInRound.push( newSprite );
+              cardsSpritesInRound.push( currentSpriteCard );
             } else {
               // probablmente habria que actualizar algún estado
             }
