@@ -115,11 +115,12 @@ function TableGame() {
       if( this.cardsPlayed%4 == 0 ){ // al final de cada 4º turno, se verifica quien debe tomar las cartas y sumar puntos
         console.log('          ==============> El jugador que debe comer las cartas es => ', this.playerWhoEats);
         logger.debug('==> El jugador que debe comer las cartas es => ', this.playerWhoEats );
+        this.roundFinished = true;
         this.saveFirstCard = true;
         this.setLastCardOnTable("");
         this.higherCardOnTurn = "";
         this.playerLead = this.playerWhoEats;      
-        this.players[this.playerWhoEats].addPoints( this.heartsThisRound );
+        this.players[ this.playerWhoEats ].addPoints( this.heartsThisRound );
         console.log('Se han sumando ', this.heartsThisRound, ' puntos al jugador ', this.playerWhoEats);
         this.heartsThisRound = 0;
 
@@ -133,6 +134,7 @@ function TableGame() {
 
         console.log('---------------------------------------------------------------------------------------------------------------------------------');
       }else{
+        this.roundFinished = false;
         this.playerLead = (this.playerLead) >= this.maxPlayers ? 1 : (this.playerLead + 1);
       }  
 
@@ -299,6 +301,14 @@ function TableGame() {
     return this.playerLead;
   }
 
+  this.getRoundFinished = function(){
+    return  this.roundFinished;
+  }
+
+  this.getPlayerWhoEats = function(){
+    return this.playerWhoEats;
+  }
+
   // this.getPlayerToPlay = function(){
   //   var currentPlayerTurn = this.playersIDs[ this.turn++ ];
   //   this.turn = this.turn === this.playersIDs.length ? 0 : this.turn;
@@ -328,6 +338,7 @@ function TableGame() {
   this.higherCardOnTurn = "";
   this.heartsHaveBeenBroken = false;
   this.heartsThisRound = 0;
+  this.roundFinished = false;
   this.id = "";
 
 }
